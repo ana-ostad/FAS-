@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>المنصة التعليمية - طلبة المدارس العليا للأساتذة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-lighter: #C8E6C9;
+            --primary-dark: #1B5E20;
+            --secondary: #1565C0;
+            --white: #FFFFFF;
+            --light: #F5F9F5;
+            --text: #1B5E20;
+            --text-light: #4CAF50;
+            --accent: #FF9800;
+            --shadow: 0 5px 15px rgba(46, 125, 50, 0.15);
+            --shadow-hover: 0 10px 25px rgba(46, 125, 50, 0.25);
+            --transition: all 0.3s ease;
+            --border-radius: 16px;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 22px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(10deg) scale(1.05);
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .logo-subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 3px;
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .main-content {
+            padding: 20px 0;
+            width: 100%;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0.8) 100%);
+            border-radius: var(--border-radius);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: var(--primary-lighter);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--primary-lighter);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        
+        .stats-section {
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .stat-icon {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .stat-text {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .subjects-section {
+            margin: 40px 0;
+            width: 100%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            border-radius: 2px;
+        }
+        
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .subject-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+        
+        .subject-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            background: rgba(76, 175, 80, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: var(--transition);
+        }
+        
+        .subject-card:hover .subject-icon {
+            transform: scale(1.05);
+            background: rgba(76, 175, 80, 0.2);
+        }
+        
+        .subject-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .subject-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .subject-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 12px;
+            margin-top: 12px;
+        }
+        
+        .features-section {
+            margin: 40px 0;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 20px 15px;
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            width: 100%;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-lighter);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--primary-lighter);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .copyright {
+            color: var(--primary-lighter);
+            font-size: 14px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .modal-header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .modal-body {
+            padding: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+            outline: none;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .alert {
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .alert-error {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+        }
+        
+        .alert-success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-name {
+            display: none;
+        }
+        
+        .member-content {
+            display: none;
+            margin-top: 30px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .member-content h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .content-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .content-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .semester-page, .math-page, .islamic-page, .chemistry-page, .mechanics-page,
+        .english-page, .arabic-page, .sarf-page, .imla-page, .balagha-page,
+        .taabir-page, .technology-page {
+            display: none;
+            width: 100%;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .semester-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .semester-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            width: 220px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .semester-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+        
+        .semester-card.selected {
+            border-color: var(--primary);
+            background: var(--primary-lighter);
+        }
+        
+        .semester-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .semester-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .subject-card::after {
+            content: '+9';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(128, 128, 128, 0.2);
+            color: rgba(128, 128, 128, 0.7);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 10px;
+            z-index: 2;
+        }
+        
+        /* تصميم صفحات المواد بنفس التصميم الذي أرسلته */
+        .math-page, .islamic-page, .chemistry-page, .mechanics-page,
+        .english-page, .arabic-page, .sarf-page, .imla-page, .balagha-page,
+        .taabir-page, .technology-page {
+            background: #f8fdf9;
+            color: var(--primary-dark);
+            min-height: 100vh;
+        }
+        
+        .math-page header, .islamic-page header, .chemistry-page header, .mechanics-page header,
+        .english-page header, .arabic-page header, .sarf-page header, .imla-page header, .balagha-page header,
+        .taabir-page header, .technology-page header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .math-page .container, .islamic-page .container, .chemistry-page .container, .mechanics-page .container,
+        .english-page .container, .arabic-page .container, .sarf-page .container, .imla-page .container, .balagha-page .container,
+        .taabir-page .container, .technology-page .container { 
+            max-width: 1000px; 
+            margin: auto; 
+            padding: 20px; 
+        }
+        
+        .math-page .logo, .islamic-page .logo, .chemistry-page .logo, .mechanics-page .logo,
+        .english-page .logo, .arabic-page .logo, .sarf-page .logo, .imla-page .logo, .balagha-page .logo,
+        .taabir-page .logo, .technology-page .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            text-decoration: none; 
+        }
+        
+        .math-page .logo-icon, .islamic-page .logo-icon, .chemistry-page .logo-icon, .mechanics-page .logo-icon,
+        .english-page .logo-icon, .arabic-page .logo-icon, .sarf-page .logo-icon, .imla-page .logo-icon, .balagha-page .logo-icon,
+        .taabir-page .logo-icon, .technology-page .logo-icon {
+            width: 50px; 
+            height: 50px; 
+            background: var(--primary); 
+            color: white;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            border-radius: 12px; 
+            font-size: 22px; 
+            box-shadow: var(--shadow);
+        }
+        
+        .math-page .logo-text, .islamic-page .logo-text, .chemistry-page .logo-text, .mechanics-page .logo-text,
+        .english-page .logo-text, .arabic-page .logo-text, .sarf-page .logo-text, .imla-page .logo-text, .balagha-page .logo-text,
+        .taabir-page .logo-text, .technology-page .logo-text { 
+            font-size: 20px; 
+            font-weight: 800; 
+            color: var(--primary); 
+        }
+        
+        .math-page .logo-subtitle, .islamic-page .logo-subtitle, .chemistry-page .logo-subtitle, .mechanics-page .logo-subtitle,
+        .english-page .logo-subtitle, .arabic-page .logo-subtitle, .sarf-page .logo-subtitle, .imla-page .logo-subtitle, .balagha-page .logo-subtitle,
+        .taabir-page .logo-subtitle, .technology-page .logo-subtitle { 
+            font-size: 14px; 
+            color: var(--primary-light); 
+        }
+        
+        .math-page .page-header, .islamic-page .page-header, .chemistry-page .page-header, .mechanics-page .page-header,
+        .english-page .page-header, .arabic-page .page-header, .sarf-page .page-header, .imla-page .page-header, .balagha-page .page-header,
+        .taabir-page .page-header, .technology-page .page-header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 25px;
+            border-radius: 14px;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .math-page .folders-list, .islamic-page .folders-list, .chemistry-page .folders-list, .mechanics-page .folders-list,
+        .english-page .folders-list, .arabic-page .folders-list, .sarf-page .folders-list, .imla-page .folders-list, .balagha-page .folders-list,
+        .taabir-page .folders-list, .technology-page .folders-list {
+            background: white;
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .math-page .folder-item, .islamic-page .folder-item, .chemistry-page .folder-item, .mechanics-page .folder-item,
+        .english-page .folder-item, .arabic-page .folder-item, .sarf-page .folder-item, .imla-page .folder-item, .balagha-page .folder-item,
+        .taabir-page .folder-item, .technology-page .folder-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid #eef5ef;
+            min-height: 85px;
+        }
+        
+        .math-page .folder-info, .islamic-page .folder-info, .chemistry-page .folder-info, .mechanics-page .folder-info,
+        .english-page .folder-info, .arabic-page .folder-info, .sarf-page .folder-info, .imla-page .folder-info, .balagha-page .folder-info,
+        .taabir-page .folder-info, .technology-page .folder-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 70%;
+        }
+        
+        .math-page .folder-number, .islamic-page .folder-number, .chemistry-page .folder-number, .mechanics-page .folder-number,
+        .english-page .folder-number, .arabic-page .folder-number, .sarf-page .folder-number, .imla-page .folder-number, .balagha-page .folder-number,
+        .taabir-page .folder-number, .technology-page .folder-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-weight: bold; 
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .math-page .folder-title, .islamic-page .folder-title, .chemistry-page .folder-title, .mechanics-page .folder-title,
+        .english-page .folder-title, .arabic-page .folder-title, .sarf-page .folder-title, .imla-page .folder-title, .balagha-page .folder-title,
+        .taabir-page .folder-title, .technology-page .folder-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            max-height: 2.6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .math-page .download-btn, .islamic-page .download-btn, .chemistry-page .download-btn, .mechanics-page .download-btn,
+        .english-page .download-btn, .arabic-page .download-btn, .sarf-page .download-btn, .imla-page .download-btn, .balagha-page .download-btn,
+        .taabir-page .download-btn, .technology-page .download-btn {
+            background: var(--primary);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        
+        .math-page .download-btn:hover, .islamic-page .download-btn:hover, .chemistry-page .download-btn:hover, .mechanics-page .download-btn:hover,
+        .english-page .download-btn:hover, .arabic-page .download-btn:hover, .sarf-page .download-btn:hover, .imla-page .download-btn:hover, .balagha-page .download-btn:hover,
+        .taabir-page .download-btn:hover, .technology-page .download-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .math-page .empty-state, .islamic-page .empty-state, .chemistry-page .empty-state, .mechanics-page .empty-state,
+        .english-page .empty-state, .arabic-page .empty-state, .sarf-page .empty-state, .imla-page .empty-state, .balagha-page .empty-state,
+        .taabir-page .empty-state, .technology-page .empty-state {
+            padding: 45px;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .math-page footer, .islamic-page footer, .chemistry-page footer, .mechanics-page footer,
+        .english-page footer, .arabic-page footer, .sarf-page footer, .imla-page footer, .balagha-page footer,
+        .taabir-page footer, .technology-page footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+        
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1600px;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .content-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .user-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .semester-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .math-page .folder-item, .islamic-page .folder-item, .chemistry-page .folder-item, .mechanics-page .folder-item,
+            .english-page .folder-item, .arabic-page .folder-item, .sarf-page .folder-item, .imla-page .folder-item, .balagha-page .folder-item,
+            .taabir-page .folder-item, .technology-page .folder-item {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .math-page .folder-info, .islamic-page .folder-info, .chemistry-page .folder-info, .mechanics-page .folder-info,
+            .english-page .folder-info, .arabic-page .folder-info, .sarf-page .folder-info, .imla-page .folder-info, .balagha-page .folder-info,
+            .taabir-page .folder-info, .technology-page .folder-info {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .math-page .download-btn, .islamic-page .download-btn, .chemistry-page .download-btn, .mechanics-page .download-btn,
+            .english-page .download-btn, .arabic-page .download-btn, .sarf-page .download-btn, .imla-page .download-btn, .balagha-page .download-btn,
+            .taabir-page .download-btn, .technology-page .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stats-section {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .content-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الصفحة الرئيسية -->
+    <div class="container" id="home-page">
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo" id="home-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+                
+                <div class="user-actions">
+                    <div id="guest-actions">
+                        <a href="#" class="btn btn-outline" id="login-btn">
+                            <i class="fas fa-user"></i>
+                            تسجيل الدخول
+                        </a>
+                        <a href="#" class="btn btn-primary" id="signup-btn">
+                            <i class="fas fa-user-plus"></i>
+                            إنشاء حساب
+                        </a>
+                    </div>
+                    <div id="user-actions" style="display: none;">
+                        <div class="user-info">
+                            <a href="#" class="btn btn-outline" id="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                تسجيل الخروج
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <section class="hero">
+                <h1>المنصة التعليمية الشاملة لطلبة المدارس العليا للأساتذة</h1>
+                <p>منصة تعليمية متطورة تقدم محتوى تعليمي متميز في مختلف التخصصات لطلبة المدارس العليا للأساتذة</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" id="start-learning-btn">
+                        <i class="fas fa-book-open"></i>
+                        ابدأ التعلم الآن
+                    </a>
+                    <a href="#" class="btn btn-outline" id="watch-video-btn">
+                        <i class="fas fa-play-circle"></i>
+                        شاهد الفيديو التعريفي
+                    </a>
+                    <a href="https://t.me/profArabe15" target="_blank" class="btn btn-outline" id="telegram-btn">
+                        <i class="fab fa-telegram"></i>
+                        انضم لقناتنا على تلغرام
+                    </a>
+                </div>
+            </section>
+            
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-text">مادة تعليمية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">درس مرئي</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-number" id="active-users">2,500+</div>
+                    <div class="stat-text">عدد المستخدمين النشطين</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-text">أستاذ متميز</div>
+                </div>
+            </section>
+            
+            <section class="subjects-section">
+                <div class="section-title">
+                    <h2>المقاييس التعليمية</h2>
+                    <p>اختر المادة التعليمية التي تريد دراستها من بين مجموعة واسعة من التخصصات</p>
+                </div>
+                
+                <div class="subjects-grid">
+                    <a href="#" class="subject-card" data-subject="math">
+                        <div class="subject-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>الرياضيات</h3>
+                        <p>دراسة المفاهيم الرياضية الأساسية والمتقدمة</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 750 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="mechanics">
+                        <div class="subject-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>الميكانيك</h3>
+                        <p>دراسة القوى والحركة وتطبيقاتها العملية</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 680 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="chemistry">
+                        <div class="subject-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>بنية المادة</h3>
+                        <p>دراسة تركيب المادة والتفاعلات الكيميائية</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 620 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="islamic">
+                        <div class="subject-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <h3>التربية الإسلامية</h3>
+                        <p>مبادئ وأسس التربية في الإسلام</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 890 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="english">
+                        <div class="subject-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>اللغة الإنجليزية</h3>
+                        <p>تطوير مهارات اللغة الإنجليزية بجميع مستوياتها</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 950 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="arabic">
+                        <div class="subject-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <h3>الأدب العربي القديم</h3>
+                        <p>دراسة الأدب العربي عبر العصور المختلفة</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 720 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="sarf">
+                        <div class="subject-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>الصرف</h3>
+                        <p>دراسة تحولات الكلمة وأوزانها في اللغة العربية</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 650 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="imla">
+                        <div class="subject-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3>الإملاء</h3>
+                        <p>قواعد الكتابة الصحيحة في اللغة العربية</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 780 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="balagha">
+                        <div class="subject-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>علم البلاغة</h3>
+                        <p>دراسة الفصاحة والبلاغة في اللغة العربية</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 710 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="taabir">
+                        <div class="subject-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>فنيات التعبير</h3>
+                        <p>تطوير مهارات التعبير الكتابي والشفوي</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 820 تحميل</span>
+                        </div>
+                    </a>
+                    <a href="#" class="subject-card" data-subject="technology">
+                        <div class="subject-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>تكنولوجيا الإعلام والاتصال</h3>
+                        <p>دراسة تطبيقات التكنولوجيا في مجال الإعلام والاتصال</p>
+                        <div class="subject-stats">
+                            <span><i class="fas fa-book"></i> 5 دروس</span>
+                            <span><i class="fas fa-download"></i> 690 تحميل</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <div class="member-content" id="member-content">
+                <h2>المحتوى الحصري للأعضاء</h2>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>دروس متقدمة في الرياضيات</h3>
+                        <p>دروس مفصلة تغطي مواضيع متقدمة في الرياضيات مع تمارين تطبيقية وحلول مفصلة.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>تجارب معملية في الكيمياء</h3>
+                        <p>سلسلة من التجارب المعملية المصورة لتوضيح المفاهيم الكيميائية بشكل عملي.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>محاضرات فيزياء حصرية</h3>
+                        <p>محاضرات مسجلة من أساتذة متخصصين في الفيزياء تغطي المنهج الدراسي بالكامل.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>تمارين تفاعلية</h3>
+                        <p>تمارين تفاعلية مع تصحيح فوري لتقييم مستوى الفهم والاستيعاب.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>نماذج امتحانات سابقة</h3>
+                        <p>مجموعة شاملة من نماذج الامتحانات السابقة مع الحلول النموذجية.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>مواد إثرائية</h3>
+                        <p>مواد إثرائية إضافية لتعميق الفهم وتوسيع المعرفة في التخصصات المختلفة.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="features-section">
+                <div class="section-title">
+                    <h2>مميزات المنصة</h2>
+                    <p>نقدم لكم أفضل الخدمات التعليمية بتقنيات حديثة وطرق مبتكرة</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>تعلم في أي وقت</h3>
+                        <p>الوصول إلى المحتوى التعليمي في أي وقت ومن أي مكان يناسبك</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>تحميل المواد</h3>
+                        <p>إمكانية تحميل الدروس والمواد التعليمية للدراسة بدون اتصال</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>أساتذة متميزون</h3>
+                        <p>تعلم من أفضل الأساتذة المتخصصين في المجال التعليمي</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>شهادات معتمدة</h3>
+                        <p>احصل على شهادات معتمدة بعد إتمامك للمسارات التعليمية</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- صفحة اختيار السداسي -->
+    <div class="container semester-page" id="semester-page">
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo" id="semester-home-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+                
+                <div class="user-actions">
+                    <div id="semester-user-actions" style="display: none;">
+                        <div class="user-info">
+                            <a href="#" class="btn btn-outline" id="semester-logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                تسجيل الخروج
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="page-header">
+            <h1 id="semester-page-title">اختر السداسي</h1>
+            <p>اختر السداسي الذي ترغب في استعراض محتواه التعليمي</p>
+        </div>
+        
+        <div class="semester-options">
+            <a href="#" class="semester-card" data-semester="1">
+                <div class="semester-icon">
+                    <i class="fas fa-1"></i>
+                </div>
+                <h3>السداسي الأول</h3>
+            </a>
+            <a href="#" class="semester-card" data-semester="2">
+                <div class="semester-icon">
+                    <i class="fas fa-2"></i>
+                </div>
+                <h3>السداسي الثاني</h3>
+            </a>
+        </div>
+    </div>
+    
+    <!-- صفحة الرياضيات -->
+    <div class="math-page" id="math-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="math-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الرياضيات - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="math-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة التربية الإسلامية -->
+    <div class="islamic-page" id="islamic-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="islamic-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس التربية الإسلامية - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="islamic-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة بنية المادة -->
+    <div class="chemistry-page" id="chemistry-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="chemistry-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس بنية المادة - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="chemistry-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة الميكانيك -->
+    <div class="mechanics-page" id="mechanics-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="mechanics-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الميكانيك - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="mechanics-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة اللغة الإنجليزية -->
+    <div class="english-page" id="english-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="english-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الإنجليزية - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="english-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة الأدب العربي -->
+    <div class="arabic-page" id="arabic-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="arabic-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الأدب العربي قديماً وحديثاً - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="arabic-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة الصرف -->
+    <div class="sarf-page" id="sarf-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="sarf-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الصرف - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="sarf-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة الإملاء -->
+    <div class="imla-page" id="imla-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="imla-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس الإملاء - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="imla-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة علم البلاغة -->
+    <div class="balagha-page" id="balagha-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="balagha-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس علم البلاغة - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="balagha-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة فنيات التعبير -->
+    <div class="taabir-page" id="taabir-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="taabir-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس فنيات الكتابة والتعبير - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="taabir-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة تكنولوجيا الإعلام والاتصال -->
+    <div class="technology-page" id="technology-page">
+        <header>
+            <div class="container">
+                <a class="logo" id="technology-home-link">
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="logo-text">المنصة التعليمية</div>
+                        <div class="logo-subtitle">طلبة المدارس العليا للأساتذة</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>دروس تكنولوجيا الإعلام والاتصال - السداسي الأول</h1>
+                <p>تحميل مباشر من Google Drive</p>
+            </div>
+
+            <div class="folders-list" id="technology-folders-container">
+                <!-- يتم تحميل الدروس هنا -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
+            </div>
+        </footer>
+    </div>
+    
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن المنصة</h3>
+                    <p>منصة تعليمية متخصصة لطلبة المدارس العليا للأساتذة، تهدف إلى تقديم محتوى تعليمي متميز في مختلف التخصصات.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-home"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> المواد التعليمية</a></li>
+                        <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> الأساتذة</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@platform.edu</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +213 123 456 789</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> الجزائر</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    جميع الحقوق محفوظة &copy; 2023 المنصة التعليمية لطلبة المدارس العليا للأساتذة
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- النماذج المنبثقة -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal">&times;</button>
+                <h2>تسجيل الدخول</h2>
+            </div>
+            <div class="modal-body">
+                <div id="login-alert" class="alert alert-error"></div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">البريد الإلكتروني</label>
+                        <input type="email" id="login-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">كلمة المرور (4 أرقام)</label>
+                        <input type="password" id="login-password" class="form-control" maxlength="4" pattern="\d{4}" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // المتغيرات لتخزين الاختيارات الحالية
+        let currentSubject = null;
+        let currentSemester = null;
+
+        // دالة واقعية لعدد المستخدمين النشطين
+        function updateActiveUsers() {
+            const activeUsersElement = document.getElementById('active-users');
+            const now = new Date();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            
+            // الوقت الحالي كنسبة مئوية من اليوم (0-1)
+            const dayProgress = (hour * 60 + minute) / (24 * 60);
+            
+            // منحنى واقعي للاستخدام خلال اليوم
+            // ذروة الصباح: 8-10 صباحاً
+            // ذروة المساء: 7-9 مساءً
+            // أقل استخدام: 3-5 صباحاً
+            let usageFactor;
+            
+            if (hour >= 6 && hour < 9) {
+                // الصباح الباكر: زيادة تدريجية
+                usageFactor = 0.3 + (hour - 6 + minute/60) / 3 * 0.4;
+            } else if (hour >= 9 && hour < 12) {
+                // الذروة الصباحية
+                usageFactor = 0.7 + (hour - 9 + minute/60) / 3 * 0.2;
+            } else if (hour >= 12 && hour < 14) {
+                // منتصف النهار: انخفاض طفيف
+                usageFactor = 0.9 - (hour - 12 + minute/60) / 2 * 0.2;
+            } else if (hour >= 14 && hour < 17) {
+                // العصر: زيادة تدريجية
+                usageFactor = 0.7 + (hour - 14 + minute/60) / 3 * 0.3;
+            } else if (hour >= 17 && hour < 21) {
+                // الذروة المسائية
+                usageFactor = 1.0 - (hour - 17 + minute/60) / 4 * 0.3;
+            } else if (hour >= 21 && hour < 24) {
+                // المساء المتأخر: انخفاض تدريجي
+                usageFactor = 0.7 - (hour - 21 + minute/60) / 3 * 0.4;
+            } else {
+                // الليل: أقل استخدام
+                usageFactor = 0.3 - (hour + minute/60) / 6 * 0.2;
+            }
+            
+            // التأكد من أن العامل بين 0.1 و 1.0
+            usageFactor = Math.max(0.1, Math.min(1.0, usageFactor));
+            
+            // حساب العدد النهائي (بين 123 و 6232)
+            const baseUsers = 123;
+            const maxUsers = 6232;
+            const activeUsers = Math.round(baseUsers + (maxUsers - baseUsers) * usageFactor);
+            
+            // تحديث العدد في الواجهة
+            activeUsersElement.textContent = activeUsers.toLocaleString();
+        }
+
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+            showPage('home-page');
+            
+            // تحديث عدد المستخدمين النشطين عند تحميل الصفحة
+            updateActiveUsers();
+            
+            // تحديث عدد المستخدمين كل دقيقة (أكثر واقعية)
+            setInterval(updateActiveUsers, 60000);
+            
+            // إضافة مستمعي الأحداث للأزرار
+            document.getElementById('login-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showModal('login-modal');
+            });
+            
+            document.getElementById('signup-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showModal('login-modal');
+                // تغيير نص النافذة إلى "إنشاء حساب" بدلاً من "تسجيل الدخول"
+                document.querySelector('#login-modal .modal-header h2').textContent = 'إنشاء حساب';
+            });
+            
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                handleLogout();
+            });
+            
+            // إضافة مستمعي الأحداث لبطاقات المواد
+            document.querySelectorAll('.subject-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentSubject = this.getAttribute('data-subject');
+                    if (!isLoggedIn()) {
+                        // تغيير نص النافذة إلى "إنشاء حساب" عند الضغط على مادة
+                        document.querySelector('#login-modal .modal-header h2').textContent = 'إنشاء حساب';
+                        showModal('login-modal');
+                    } else {
+                        showSemesterPage(currentSubject);
+                    }
+                });
+            });
+            
+            // إضافة مستمعي الأحداث لأزرار الإغلاق
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    hideModals();
+                });
+            });
+            
+            // إضافة مستمع حدث للنقر خارج النافذة المنبثقة لإغلاقها
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        hideModals();
+                    }
+                });
+            });
+            
+            // إضافة مستمعي الأحداث لبطاقات السداسي
+            document.querySelectorAll('.semester-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentSemester = this.getAttribute('data-semester');
+                    
+                    // إذا كانت السداسي الأول، اعرض الصفحة المناسبة للمادة
+                    if (currentSemester === '1') {
+                        if (currentSubject === 'math') {
+                            showMathPage();
+                        } else if (currentSubject === 'islamic') {
+                            showIslamicPage();
+                        } else if (currentSubject === 'chemistry') {
+                            showChemistryPage();
+                        } else if (currentSubject === 'mechanics') {
+                            showMechanicsPage();
+                        } else if (currentSubject === 'english') {
+                            showEnglishPage();
+                        } else if (currentSubject === 'arabic') {
+                            showArabicPage();
+                        } else if (currentSubject === 'sarf') {
+                            showSarfPage();
+                        } else if (currentSubject === 'imla') {
+                            showImlaPage();
+                        } else if (currentSubject === 'balagha') {
+                            showBalaghaPage();
+                        } else if (currentSubject === 'taabir') {
+                            showTaabirPage();
+                        } else if (currentSubject === 'technology') {
+                            showTechnologyPage();
+                        }
+                    }
+                });
+            });
+            
+            // إضافة مستمعي الأحداث لروابط التنقل
+            document.getElementById('home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('semester-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('math-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('islamic-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('chemistry-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('mechanics-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('english-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('arabic-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('sarf-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('imla-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('balagha-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('taabir-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('technology-home-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            // إضافة مستمع حدث للنموذج
+            document.getElementById('login-form').addEventListener('submit', handleLogin);
+        });
+        
+        // التحقق مما إذا كان المستخدم مسجل الدخول
+        function isLoggedIn() {
+            return localStorage.getItem('currentUser') !== null;
+        }
+        
+        // التحقق من حالة تسجيل الدخول وعرض المحتوى المناسب
+        function checkLoginStatus() {
+            if (isLoggedIn()) {
+                showMemberContent();
+            } else {
+                showGuestContent();
+            }
+        }
+        
+        // عرض محتوى الضيف
+        function showGuestContent() {
+            document.getElementById('guest-actions').style.display = 'flex';
+            document.getElementById('user-actions').style.display = 'none';
+            document.getElementById('member-content').style.display = 'none';
+        }
+        
+        // عرض محتوى العضو
+        function showMemberContent() {
+            document.getElementById('guest-actions').style.display = 'none';
+            document.getElementById('user-actions').style.display = 'flex';
+            document.getElementById('member-content').style.display = 'block';
+        }
+        
+        // عرض نافذة منبثقة
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        
+        // إخفاء جميع النوافذ المنبثقة
+        function hideModals() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+        
+        // إظهار صفحة معينة وإخفاء الآخرين
+        function showPage(pageId) {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('semester-page').style.display = 'none';
+            document.getElementById('math-page').style.display = 'none';
+            document.getElementById('islamic-page').style.display = 'none';
+            document.getElementById('chemistry-page').style.display = 'none';
+            document.getElementById('mechanics-page').style.display = 'none';
+            document.getElementById('english-page').style.display = 'none';
+            document.getElementById('arabic-page').style.display = 'none';
+            document.getElementById('sarf-page').style.display = 'none';
+            document.getElementById('imla-page').style.display = 'none';
+            document.getElementById('balagha-page').style.display = 'none';
+            document.getElementById('taabir-page').style.display = 'none';
+            document.getElementById('technology-page').style.display = 'none';
+            document.getElementById('main-footer').style.display = 'block';
+            
+            if (pageId === 'home-page') {
+                document.getElementById('home-page').style.display = 'block';
+            } else if (pageId === 'semester-page') {
+                document.getElementById('semester-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'math-page') {
+                document.getElementById('math-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'islamic-page') {
+                document.getElementById('islamic-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'chemistry-page') {
+                document.getElementById('chemistry-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'mechanics-page') {
+                document.getElementById('mechanics-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'english-page') {
+                document.getElementById('english-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'arabic-page') {
+                document.getElementById('arabic-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'sarf-page') {
+                document.getElementById('sarf-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'imla-page') {
+                document.getElementById('imla-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'balagha-page') {
+                document.getElementById('balagha-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'taabir-page') {
+                document.getElementById('taabir-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            } else if (pageId === 'technology-page') {
+                document.getElementById('technology-page').style.display = 'block';
+                document.getElementById('main-footer').style.display = 'none';
+            }
+        }
+        
+        // معالجة تسجيل الدخول
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // التحقق من صحة كلمة المرور (يجب أن تكون 4 أرقام)
+            if (!/^\d{4}$/.test(password)) {
+                return;
+            }
+            
+            // حفظ حالة تسجيل الدخول (إنشاء حساب تلقائي)
+            localStorage.setItem('currentUser', JSON.stringify({email: email}));
+            showMemberContent();
+            hideModals();
+            
+            // إذا كان هناك مادة محددة، الانتقال إليها مباشرة
+            if (currentSubject) {
+                showSemesterPage(currentSubject);
+            }
+        }
+        
+        // معالجة تسجيل الخروج
+        function handleLogout() {
+            localStorage.removeItem('currentUser');
+            showGuestContent();
+        }
+        
+        // عرض صفحة اختيار السداسي
+        function showSemesterPage(subject) {
+            showPage('semester-page');
+        }
+        
+        // عرض صفحة الرياضيات
+        function showMathPage() {
+            showPage('math-page');
+        }
+        
+        // عرض صفحة التربية الإسلامية
+        function showIslamicPage() {
+            showPage('islamic-page');
+        }
+        
+        // عرض صفحة بنية المادة
+        function showChemistryPage() {
+            showPage('chemistry-page');
+        }
+        
+        // عرض صفحة الميكانيك
+        function showMechanicsPage() {
+            showPage('mechanics-page');
+        }
+        
+        // عرض صفحة اللغة الإنجليزية
+        function showEnglishPage() {
+            showPage('english-page');
+        }
+        
+        // عرض صفحة الأدب العربي
+        function showArabicPage() {
+            showPage('arabic-page');
+        }
+        
+        // عرض صفحة الصرف
+        function showSarfPage() {
+            showPage('sarf-page');
+        }
+        
+        // عرض صفحة الإملاء٩
+        function showImlaPage() {
+            showPage('imla-page');
+        }
+        
+        // عرض صفحة علم البلاغة
+        function showBalaghaPage() {
+            showPage('balagha-page');
+        }
+        
+        // عرض صفحة فنيات التعبير
+        function showTaabirPage() {
+            showPage('taabir-page');
+        }
+        
+        // عرض صفحة تكنولوجيا الإعلام والاتصال
+        function showTechnologyPage() {
+            showPage('technology-page');
+        }
+    </script>
+</body>
+</html>
