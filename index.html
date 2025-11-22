@@ -911,6 +911,30 @@
             padding: 25px 0;
             margin-top: 40px;
         }
+
+        /* زر الرجوع */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background: var(--primary-dark);
+            transform: translateX(-3px);
+        }
         
         @media (min-width: 1400px) {
             .container {
@@ -994,6 +1018,13 @@
             .taabir-page .download-btn, .technology-page .download-btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 8px 12px;
+                font-size: 14px;
             }
         }
         
@@ -1392,6 +1423,12 @@
                 <h3>السداسي الثاني</h3>
             </a>
         </div>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="semester-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
     
     <!-- صفحة الرياضيات -->
@@ -1424,6 +1461,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="math-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة التربية الإسلامية -->
@@ -1456,6 +1499,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="islamic-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة بنية المادة -->
@@ -1488,6 +1537,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="chemistry-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة الميكانيك -->
@@ -1520,6 +1575,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="mechanics-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة اللغة الإنجليزية -->
@@ -1552,6 +1613,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="english-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة الأدب العربي -->
@@ -1584,6 +1651,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="arabic-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة الصرف -->
@@ -1616,6 +1689,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="sarf-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة الإملاء -->
@@ -1648,6 +1727,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="imla-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة علم البلاغة -->
@@ -1680,6 +1765,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="balagha-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة فنيات التعبير -->
@@ -1712,6 +1803,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="taabir-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
 
     <!-- صفحة تكنولوجيا الإعلام والاتصال -->
@@ -1744,6 +1841,12 @@
                 <p style="text-align:center;color:#C8E6C9">© جميع الحقوق محفوظة</p>
             </div>
         </footer>
+        
+        <!-- زر الرجوع -->
+        <button class="back-button" id="technology-back-btn">
+            <i class="fas fa-arrow-right"></i>
+            الرجوع
+        </button>
     </div>
     
     <footer id="main-footer">
@@ -1810,55 +1913,76 @@
         let currentSubject = null;
         let currentSemester = null;
 
-        // دالة واقعية لعدد المستخدمين النشطين
-        function updateActiveUsers() {
-            const activeUsersElement = document.getElementById('active-users');
+        // روابط Google Scripts لكل مادة
+        const SUBJECT_SCRIPTS = {
+            math: "https://script.google.com/macros/s/AKfycbzU-RHIIwPbbOYG7Npv2cjTedfwIh5NP2l0dW6xgmWdq9LgcebRePHtetuOdJ26vi6ueA/exec",
+            islamic: "https://script.google.com/macros/s/AKfycbzRIbbAad5NR85hLN9rMifzf2Ln7MdD8itydovrlJ6O12p4P2wCPRO12KVoru3dkW_ZLA/exec",
+            chemistry: "https://script.google.com/macros/s/AKfycbwqaiqlgxPP4Wx58X43AVgOJzC3ChRFA8rtTG-N49hqWS9ePMPQbyIZjcrS6vG0Jl5SLA/exec",
+            mechanics: "https://script.google.com/macros/s/AKfycbxdXazP41eLVXfyZP9vx2V6nBsIEdKnqF2JqpaXDnqnkZL7n6Li6iOuNxI9bB5XC1oJdQ/exec",
+            english: "https://script.google.com/macros/s/AKfycbwYNtp4su1of3j2q-XMSXvpjS7jRg1Fa8YLVRCA54ylmBNy7BJLVH3DJw5BRV2ONO2kMg/exec",
+            arabic: "https://script.google.com/macros/s/AKfycbzVQhOknzG_RckVU5vOdSasZHrT-mRryZR5ixwy4oQ2QDtg5sCoMgWkOrhTew67VGWk/exec",
+            sarf: "https://script.google.com/macros/s/AKfycbxDefv3J_8YSWYW7Bn1dqRRrs9Qbwo39V_kBiBbXSaTN7ygzziNABK_StvyZdHAblaTNw/exec",
+            imla: "https://script.google.com/macros/s/AKfycbxznpVKzchAM4hoa0paUOughe89RnnX2GpA2gpCkeLA9w-VNKGa1L1QmyNAWsFoEdOnOQ/exec",
+            balagha: "https://script.google.com/macros/s/AKfycbzDAcfodxvD8gIFH7OlM-h65shRIfbLVbrXiT20_rWXCNQ4osmojtZ0WUIms0W2Jb0SSw/exec",
+            taabir: "https://script.google.com/macros/s/AKfycbwsIqCbwLs_k4745FzilBjvr9UAq9EfATHjGf70mpLvRDELEv7G9g_WsEFrejyv85Ze/exec",
+            technology: "https://script.google.com/macros/s/AKfycbz1x64FzUqBei8B9B2gypi0-gac-HI8qs_GljbmyRjOsQQT4a3XAPBM7VlIDIgQ1br_Uw/exec"
+        };
+
+        // دالة محسنة لتحديث عدد المستخدمين النشطين
+        function calculateActiveUsers() {
             const now = new Date();
             const hour = now.getHours();
-            const minute = now.getMinutes();
+            const minutes = now.getMinutes();
             
-            // الوقت الحالي كنسبة مئوية من اليوم (0-1)
-            const dayProgress = (hour * 60 + minute) / (24 * 60);
+            // حساب الوقت الكلي بالدقائق من بداية اليوم
+            const totalMinutes = hour * 60 + minutes;
             
-            // منحنى واقعي للاستخدام خلال اليوم
-            // ذروة الصباح: 8-10 صباحاً
-            // ذروة المساء: 7-9 مساءً
-            // أقل استخدام: 3-5 صباحاً
-            let usageFactor;
+            // تحديد إذا كان الوقت نهاراً (6 صباحاً - 6 مساءً) أو ليلاً
+            const isDaytime = hour >= 6 && hour < 18;
             
-            if (hour >= 6 && hour < 9) {
-                // الصباح الباكر: زيادة تدريجية
-                usageFactor = 0.3 + (hour - 6 + minute/60) / 3 * 0.4;
-            } else if (hour >= 9 && hour < 12) {
-                // الذروة الصباحية
-                usageFactor = 0.7 + (hour - 9 + minute/60) / 3 * 0.2;
-            } else if (hour >= 12 && hour < 14) {
-                // منتصف النهار: انخفاض طفيف
-                usageFactor = 0.9 - (hour - 12 + minute/60) / 2 * 0.2;
-            } else if (hour >= 14 && hour < 17) {
-                // العصر: زيادة تدريجية
-                usageFactor = 0.7 + (hour - 14 + minute/60) / 3 * 0.3;
-            } else if (hour >= 17 && hour < 21) {
-                // الذروة المسائية
-                usageFactor = 1.0 - (hour - 17 + minute/60) / 4 * 0.3;
-            } else if (hour >= 21 && hour < 24) {
-                // المساء المتأخر: انخفاض تدريجي
-                usageFactor = 0.7 - (hour - 21 + minute/60) / 3 * 0.4;
+            // القاعدة الأساسية بناءً على الوقت من اليوم
+            let baseValue;
+            if (isDaytime) {
+                // خلال النهار: يزيد العدد تدريجياً من الصباح إلى الظهيرة ثم ينخفض قليلاً
+                if (hour < 12) {
+                    // من 6 صباحاً إلى 12 ظهراً: زيادة تدريجية
+                    baseValue = 1500 + (totalMinutes - 360) * 3.5;
+                } else {
+                    // من 12 ظهراً إلى 6 مساءً: انخفاض تدريجي
+                    baseValue = 4200 - (totalMinutes - 720) * 2.8;
+                }
             } else {
-                // الليل: أقل استخدام
-                usageFactor = 0.3 - (hour + minute/60) / 6 * 0.2;
+                // خلال الليل: ينخفض العدد تدريجياً
+                if (hour < 24 && hour >= 18) {
+                    // من 6 مساءً إلى 12 منتصف الليل: انخفاض سريع
+                    baseValue = 2500 - (totalMinutes - 1080) * 1.8;
+                } else {
+                    // من 12 منتصف الليل إلى 6 صباحاً: انخفاض بطيء
+                    baseValue = 1200 - (totalMinutes) * 0.3;
+                }
             }
             
-            // التأكد من أن العامل بين 0.1 و 1.0
-            usageFactor = Math.max(0.1, Math.min(1.0, usageFactor));
+            // إضافة تقلبات عشوائية صغيرة لجعلها أكثر واقعية
+            const randomFluctuation = Math.floor(Math.random() * 80) - 40; // من -40 إلى +40
             
-            // حساب العدد النهائي (بين 123 و 6232)
-            const baseUsers = 123;
-            const maxUsers = 6232;
-            const activeUsers = Math.round(baseUsers + (maxUsers - baseUsers) * usageFactor);
+            // حساب القيمة النهائية
+            let finalValue = Math.floor(baseValue + randomFluctuation);
             
-            // تحديث العدد في الواجهة
-            activeUsersElement.textContent = activeUsers.toLocaleString();
+            // التأكد من أن العدد يبقى بين 123 و 6232
+            if (finalValue < 123) {
+                finalValue = 123 + Math.floor(Math.random() * 50);
+            } else if (finalValue > 6232) {
+                finalValue = 6232 - Math.floor(Math.random() * 50);
+            }
+            
+            return finalValue;
+        }
+
+        // دالة لتحديث عرض عدد المستخدمين
+        function updateActiveUsers() {
+            const activeUsersElement = document.getElementById('active-users');
+            const currentUsers = calculateActiveUsers();
+            activeUsersElement.textContent = currentUsers.toLocaleString();
         }
 
         // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
@@ -1869,8 +1993,8 @@
             // تحديث عدد المستخدمين النشطين عند تحميل الصفحة
             updateActiveUsers();
             
-            // تحديث عدد المستخدمين كل دقيقة (أكثر واقعية)
-            setInterval(updateActiveUsers, 60000);
+            // تحديث عدد المستخدمين كل 30 ثانية (بدلاً من 2 ثانية لتجنب التغيير السريع)
+            setInterval(updateActiveUsers, 30000);
             
             // إضافة مستمعي الأحداث للأزرار
             document.getElementById('login-btn').addEventListener('click', function(e) {
@@ -2023,6 +2147,67 @@
                 showPage('home-page');
             });
             
+            // إضافة مستمعي الأحداث لأزرار الرجوع
+            document.getElementById('semester-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home-page');
+            });
+            
+            document.getElementById('math-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('math');
+            });
+            
+            document.getElementById('islamic-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('islamic');
+            });
+            
+            document.getElementById('chemistry-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('chemistry');
+            });
+            
+            document.getElementById('mechanics-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('mechanics');
+            });
+            
+            document.getElementById('english-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('english');
+            });
+            
+            document.getElementById('arabic-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('arabic');
+            });
+            
+            document.getElementById('sarf-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('sarf');
+            });
+            
+            document.getElementById('imla-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('imla');
+            });
+            
+            document.getElementById('balagha-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('balagha');
+            });
+            
+            document.getElementById('taabir-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('taabir');
+            });
+            
+            document.getElementById('technology-back-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSemesterPage('technology');
+            });
+            
             // إضافة مستمع حدث للنموذج
             document.getElementById('login-form').addEventListener('submit', handleLogin);
         });
@@ -2156,63 +2341,124 @@
         
         // عرض صفحة اختيار السداسي
         function showSemesterPage(subject) {
+            currentSubject = subject;
             showPage('semester-page');
         }
         
         // عرض صفحة الرياضيات
         function showMathPage() {
             showPage('math-page');
+            loadLessons('math', 'math-folders-container');
         }
         
         // عرض صفحة التربية الإسلامية
         function showIslamicPage() {
             showPage('islamic-page');
+            loadLessons('islamic', 'islamic-folders-container');
         }
         
         // عرض صفحة بنية المادة
         function showChemistryPage() {
             showPage('chemistry-page');
+            loadLessons('chemistry', 'chemistry-folders-container');
         }
         
         // عرض صفحة الميكانيك
         function showMechanicsPage() {
             showPage('mechanics-page');
+            loadLessons('mechanics', 'mechanics-folders-container');
         }
         
         // عرض صفحة اللغة الإنجليزية
         function showEnglishPage() {
             showPage('english-page');
+            loadLessons('english', 'english-folders-container');
         }
         
         // عرض صفحة الأدب العربي
         function showArabicPage() {
             showPage('arabic-page');
+            loadLessons('arabic', 'arabic-folders-container');
         }
         
         // عرض صفحة الصرف
         function showSarfPage() {
             showPage('sarf-page');
+            loadLessons('sarf', 'sarf-folders-container');
         }
         
-        // عرض صفحة الإملاء٩
+        // عرض صفحة الإملاء
         function showImlaPage() {
             showPage('imla-page');
+            loadLessons('imla', 'imla-folders-container');
         }
         
         // عرض صفحة علم البلاغة
         function showBalaghaPage() {
             showPage('balagha-page');
+            loadLessons('balagha', 'balagha-folders-container');
         }
         
         // عرض صفحة فنيات التعبير
         function showTaabirPage() {
             showPage('taabir-page');
+            loadLessons('taabir', 'taabir-folders-container');
         }
         
         // عرض صفحة تكنولوجيا الإعلام والاتصال
         function showTechnologyPage() {
             showPage('technology-page');
+            loadLessons('technology', 'technology-folders-container');
+        }
+        
+        // دالة عامة لجلب الدروس من Google Drive
+        async function loadLessons(subject, containerId) {
+            const box = document.getElementById(containerId);
+            const SCRIPT_URL = SUBJECT_SCRIPTS[subject];
+
+            box.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                    <h3>جاري تحميل الدروس...</h3>
+                </div>
+            `;
+
+            try {
+                const res = await fetch(SCRIPT_URL);
+                const data = await res.json();
+
+                box.innerHTML = "";
+
+                data.forEach((file, i) => {
+                    const item = document.createElement("div");
+                    item.className = "folder-item";
+
+                    const isFolder = file.type === "folder";
+
+                    item.innerHTML = `
+                        <div class="folder-info">
+                            <div class="folder-number">${i + 1}</div>
+                            <div class="folder-title">${file.name}</div>
+                        </div>
+
+                        <a href="${file.url}" target="_blank" class="download-btn">
+                            <i class="${isFolder ? "fas fa-folder-open" : "fas fa-download"}"></i>
+                            ${isFolder ? "فتح" : "تحميل"}
+                        </a>
+                    `;
+
+                    box.appendChild(item);
+                });
+
+            } catch (e) {
+                box.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>حدث خطأ في تحميل الدروس</h3>
+                    </div>
+                `;
+            }
         }
     </script>
 </body>
-</html>
+    </html>
